@@ -1,0 +1,17 @@
+<html>
+<head>
+</head>
+<body>
+<div><span>JobSearch</span>
+    <form action="#" method="get">
+        {% csrf_token %}
+        <input type="text" name="text">
+        <button type="submit">search</button>
+    </form>
+
+</div>
+
+{{ context }}
+
+</body>
+</html>

@@ -6,5 +6,6 @@ from app import views
 __author__ = 'cekerlee'
 
 urlpatterns = [
-    path('', views.index, name="index")
+    path('', views.index, name="index"),
+    path('result/', views.result, name="result"),
 ]
