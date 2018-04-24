@@ -11,7 +11,25 @@
 
 </div>
 
-{{ context }}
+
+{% if context %}
+<ul>
+	{% for info in context %}
+        {%  for k, v in info.items %}
+            {%  if k == "title" %}
+                <a href={{info.job_url}} >{{ v }}</a>
+                <p>{{ info.job_desc }}</p>
+            {% endif %}
+        {% endfor %}
+	<hr>
+	<p></p>
+	{% endfor %}
+</ul>
+
+{% else %}
+
+<p>Not Found</p>
+{% endif %}
 
 </body>
 </html>

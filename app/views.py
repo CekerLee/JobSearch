@@ -25,5 +25,12 @@ def result(request):
             },
         }
     )
-    context = {"context": response}
+    hit_list=[]
+    for hit in response["hits"]['hits']:
+        hit_dict={}
+        hit_dict['title'] = hit["_source"]['title']
+        hit_dict['job_url'] = hit["_source"]['job_url']
+        hit_dict['job_desc'] = hit["_source"]['job_desc'][:200]
+        hit_list.append(hit_dict)
+    context = {"context": hit_list}
     return render(request, 'app/result.html', context)
